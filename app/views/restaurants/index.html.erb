@@ -1,0 +1,15 @@
+<div class="container text-center">
+  <div class="row">
+  <h1>Restaurant List</h1>
+
+    <ol>
+      <% @restaurants.each do |restaurant| %>
+        <li class="list-inline"><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+        <p>Category: <%= restaurant.category %></p>
+        <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-outline-success btn-sm"%>
+      <% end %>
+    </ol>
+
+    <%= link_to 'add restaurant', new_restaurant_path  %>
+  </div>
+</div>
